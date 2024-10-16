@@ -39,9 +39,9 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ category, model, setModel
     ],
     image: [
       { value: 'dall-e-3-standard-1024', label: 'DALL-E 3 (Standard 1024x1024)' },
-      { value: 'dall-e-3-standard-1792', label: 'DALL-E 3 (Standard 1024x1792 or 1792x1024)' },
+      { value: 'dall-e-3-standard-1792', label: 'DALL-E 3 (Standard 1024x1792 או 1792x1024)' },
       { value: 'dall-e-3-hd-1024', label: 'DALL-E 3 (HD 1024x1024)' },
-      { value: 'dall-e-3-hd-1792', label: 'DALL-E 3 (HD 1024x1792 or 1792x1024)' },
+      { value: 'dall-e-3-hd-1792', label: 'DALL-E 3 (HD 1024x1792 או 1792x1024)' },
       { value: 'dall-e-2-1024', label: 'DALL-E 2 (1024x1024)' },
       { value: 'dall-e-2-512', label: 'DALL-E 2 (512x512)' },
       { value: 'dall-e-2-256', label: 'DALL-E 2 (256x256)' },
@@ -76,7 +76,7 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ category, model, setModel
   return (
     <div className="mb-4">
       <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">
-        Select Model
+        בחר מודל
       </label>
       <select
         id="model"
@@ -93,7 +93,7 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ category, model, setModel
       {category === 'assistants' && (
         <div className="mt-4">
           <label htmlFor="assistantModel" className="block text-sm font-medium text-gray-700 mb-1">
-            Assistant Language Model
+            מודל שפה של Assistant
           </label>
           <select
             id="assistantModel"

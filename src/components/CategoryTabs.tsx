@@ -2,13 +2,14 @@ import React from 'react';
 
 interface CategoryTabsProps {
   category: string;
-  setCategory: (category: string) => void;}
+  setCategory: (category: string) => void;
+}
 
 const CategoryTabs: React.FC<CategoryTabsProps> = ({ category, setCategory }) => {
   const categories = [
-    { id: 'text', label: 'Text' },
-    { id: 'image', label: 'Image' },
-    { id: 'audio', label: 'Audio' },
+    { id: 'text', label: 'טקסט' },
+    { id: 'image', label: 'תמונה' },
+    { id: 'audio', label: 'אודיו' },
     { id: 'embedding', label: 'Embedding' },
     { id: 'finetuning', label: 'Fine-tuning' },
     { id: 'assistants', label: 'Assistants' },
