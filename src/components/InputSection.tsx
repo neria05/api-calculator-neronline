@@ -68,11 +68,11 @@ const InputSection: React.FC<InputSectionProps> = ({
 }) => {
   return (
     <>
-      <TokenInput label="Number of API Calls" value={apiCalls} onChange={setApiCalls} />
+      <TokenInput label="מספר קריאות API" value={apiCalls} onChange={setApiCalls} />
       {(category === 'text' || category === 'realtime') && (
         <>
-          <TokenInput label="Input Tokens" value={inputTokens} onChange={setInputTokens} />
-          <TokenInput label="Output Tokens" value={outputTokens} onChange={setOutputTokens} />
+          <TokenInput label="טוקנים בקלט" value={inputTokens} onChange={setInputTokens} />
+          <TokenInput label="טוקנים בפלט" value={outputTokens} onChange={setOutputTokens} />
           {category === 'text' && model.startsWith('gpt-4o') && (
             <div className="mb-4">
               <label className="flex items-center">
@@ -80,16 +80,16 @@ const InputSection: React.FC<InputSectionProps> = ({
                   type="checkbox"
                   checked={includeVision}
                   onChange={(e) => setIncludeVision(e.target.checked)}
-                  className="form-checkbox h-5 w-5 text-blue-600"
+                  className="form-checkbox h-5 w-5 text-blue-600 ml-2"
                 />
-                <span className="ml-2 text-gray-700">Include Vision</span>
+                <span className="text-gray-700">כלול Vision</span>
               </label>
             </div>
           )}
           {category === 'text' && includeVision && (
             <div className="mb-4">
               <label htmlFor="resolution" className="block text-sm font-medium text-gray-700 mb-1">
-                Image Resolution
+                רזולוציית תמונה
               </label>
               <select
                 id="resolution"
@@ -110,60 +110,60 @@ const InputSection: React.FC<InputSectionProps> = ({
                 type="checkbox"
                 checked={isBatchAPI}
                 onChange={(e) => setIsBatchAPI(e.target.checked)}
-                className="form-checkbox h-5 w-5 text-blue-600"
+                className="form-checkbox h-5 w-5 text-blue-600 ml-2"
               />
-              <span className="ml-2 text-gray-700">Use Batch API (50% discount)</span>
+              <span className="text-gray-700">השתמש ב-Batch API (הנחה של 50%)</span>
             </label>
           </div>
         </>
       )}
       {category === 'image' && (
-        <TokenInput label="Number of Images" value={imageCount} onChange={setImageCount} />
+        <TokenInput label="מספר תמונות" value={imageCount} onChange={setImageCount} />
       )}
       {category === 'audio' && (
         <>
           {model === 'whisper' && (
-            <TokenInput label="Minutes" value={minutes} onChange={setMinutes} />
+            <TokenInput label="דקות" value={minutes} onChange={setMinutes} />
           )}
           {['tts', 'tts-hd'].includes(model) && (
-            <TokenInput label="Characters" value={characters} onChange={setCharacters} />
+            <TokenInput label="תווים" value={characters} onChange={setCharacters} />
           )}
         </>
       )}
       {category === 'embedding' && (
-        <TokenInput label="Input Tokens" value={inputTokens} onChange={setInputTokens} />
+        <TokenInput label="טוקנים בקלט" value={inputTokens} onChange={setInputTokens} />
       )}
       {category === 'finetuning' && (
         <>
-          <TokenInput label="Input Tokens" value={inputTokens} onChange={setInputTokens} />
-          <TokenInput label="Output Tokens" value={outputTokens} onChange={setOutputTokens} />
-          <TokenInput label="Training Tokens" value={trainingTokens} onChange={setTrainingTokens} />
+          <TokenInput label="טוקנים בקלט" value={inputTokens} onChange={setInputTokens} />
+          <TokenInput label="טוקנים בפלט" value={outputTokens} onChange={setOutputTokens} />
+          <TokenInput label="טוקנים לאימון" value={trainingTokens} onChange={setTrainingTokens} />
         </>
       )}
       {category === 'assistants' && (
         <>
-          <TokenInput label="Input Tokens" value={inputTokens} onChange={setInputTokens} />
-          <TokenInput label="Output Tokens" value={outputTokens} onChange={setOutputTokens} />
+          <TokenInput label="טוקנים בקלט" value={inputTokens} onChange={setInputTokens} />
+          <TokenInput label="טוקנים בפלט" value={outputTokens} onChange={setOutputTokens} />
           {model === 'assistants-code-interpreter' && (
-            <TokenInput label="Sessions" value={sessions} onChange={setSessions} />
+            <TokenInput label="מספר סשנים" value={sessions} onChange={setSessions} />
           )}
           {model === 'assistants-file-search' && (
-            <TokenInput label="GB per Day" value={gbPerDay} onChange={setGbPerDay} />
+            <TokenInput label="GB ליום" value={gbPerDay} onChange={setGbPerDay} />
           )}
         </>
       )}
       {category === 'realtime' && (
         <>
-          <TokenInput label="Minutes" value={minutes} onChange={setMinutes} />
+          <TokenInput label="דקות" value={minutes} onChange={setMinutes} />
           <div className="mb-4">
             <label className="flex items-center">
               <input
                 type="checkbox"
                 checked={isAudioInput}
                 onChange={(e) => setIsAudioInput(e.target.checked)}
-                className="form-checkbox h-5 w-5 text-blue-600"
+                className="form-checkbox h-5 w-5 text-blue-600 ml-2"
               />
-              <span className="ml-2 text-gray-700">Audio Input</span>
+              <span className="text-gray-700">קלט אודיו</span>
             </label>
           </div>
           <div className="mb-4">
@@ -172,9 +172,9 @@ const InputSection: React.FC<InputSectionProps> = ({
                 type="checkbox"
                 checked={isAudioOutput}
                 onChange={(e) => setIsAudioOutput(e.target.checked)}
-                className="form-checkbox h-5 w-5 text-blue-600"
+                className="form-checkbox h-5 w-5 text-blue-600 ml-2"
               />
-              <span className="ml-2 text-gray-700">Audio Output</span>
+              <span className="text-gray-700">פלט אודיו</span>
             </label>
           </div>
         </>

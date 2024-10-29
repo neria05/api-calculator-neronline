@@ -8,8 +8,8 @@ interface TokenInputProps {
 
 const TokenInput: React.FC<TokenInputProps> = ({ label, value, onChange }) => {
   return (
-    <div className="mb-4">
-      <label htmlFor={label} className="block text-sm font-medium text-gray-700 mb-1">
+    <div className="mb-3 sm:mb-4">
+      <label htmlFor={label} className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
         {label}
       </label>
       <input
@@ -18,7 +18,7 @@ const TokenInput: React.FC<TokenInputProps> = ({ label, value, onChange }) => {
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         min="0"
-        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+        className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
       />
     </div>
   );

@@ -39,9 +39,9 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ category, model, setModel
     ],
     image: [
       { value: 'dall-e-3-standard-1024', label: 'DALL-E 3 (Standard 1024x1024)' },
-      { value: 'dall-e-3-standard-1792', label: 'DALL-E 3 (Standard 1024x1792 or 1792x1024)' },
+      { value: 'dall-e-3-standard-1792', label: 'DALL-E 3 (Standard 1024x1792 או 1792x1024)' },
       { value: 'dall-e-3-hd-1024', label: 'DALL-E 3 (HD 1024x1024)' },
-      { value: 'dall-e-3-hd-1792', label: 'DALL-E 3 (HD 1024x1792 or 1792x1024)' },
+      { value: 'dall-e-3-hd-1792', label: 'DALL-E 3 (HD 1024x1792 או 1792x1024)' },
       { value: 'dall-e-2-1024', label: 'DALL-E 2 (1024x1024)' },
       { value: 'dall-e-2-512', label: 'DALL-E 2 (512x512)' },
       { value: 'dall-e-2-256', label: 'DALL-E 2 (256x256)' },
@@ -74,15 +74,15 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ category, model, setModel
   };
 
   return (
-    <div className="mb-4">
-      <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">
-        Select Model
+    <div className="mb-3 sm:mb-4">
+      <label htmlFor="model" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+        בחר מודל
       </label>
       <select
         id="model"
         value={model}
         onChange={(e) => setModel(e.target.value)}
-        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+        className="w-full p-2 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
       >
         {modelOptions[category].map((option) => (
           <option key={option.value} value={option.value}>
@@ -91,15 +91,15 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ category, model, setModel
         ))}
       </select>
       {category === 'assistants' && (
-        <div className="mt-4">
-          <label htmlFor="assistantModel" className="block text-sm font-medium text-gray-700 mb-1">
-            Assistant Language Model
+        <div className="mt-3 sm:mt-4">
+          <label htmlFor="assistantModel" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+            מודל שפה של Assistant
           </label>
           <select
             id="assistantModel"
             value={assistantModel}
             onChange={(e) => setAssistantModel(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full p-2 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           >
             {modelOptions.text.map((option) => (
               <option key={option.value} value={option.value}>

@@ -18,30 +18,30 @@ const TokenCounter: React.FC<TokenCounterProps> = ({ setInputTokens, setOutputTo
   const countTokens = (input: string) => {
     const tokens = encode(input).length;
     setInputTokens(tokens);
-    setOutputTokens(Math.round(tokens * 1.5)); // Estimate output tokens as 1.5x input
+    setOutputTokens(Math.round(tokens * 1.5));
   };
 
   return (
-    <div className="mt-4">
-      <label htmlFor="token-counter" className="block text-sm font-medium text-gray-700 mb-1">
-        Token Counter
+    <div className="mt-3 sm:mt-4">
+      <label htmlFor="token-counter" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+        סופר טוקנים
       </label>
       <textarea
         id="token-counter"
         rows={4}
-        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-        placeholder="Paste your text here to count tokens..."
+        className="w-full p-2 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+        placeholder="הדבק את הטקסט שלך כאן כדי לספור טוקנים..."
         value={text}
         onChange={(e) => {
           setText(e.target.value);
           countTokens(e.target.value);
         }}
       ></textarea>
-      <p className="mt-1 text-sm text-gray-500">
-        Word count: {wordCount}
+      <p className="mt-1 text-xs sm:text-sm text-gray-500">
+        מספר מילים: {wordCount}
       </p>
-      <p className="mt-1 text-sm text-gray-500">
-        Estimated tokens: {encode(text).length} (input), {Math.round(encode(text).length * 1.5)} (output)
+      <p className="mt-1 text-xs sm:text-sm text-gray-500">
+        טוקנים משוערים: {encode(text).length} (קלט), {Math.round(encode(text).length * 1.5)} (פלט)
       </p>
     </div>
   );

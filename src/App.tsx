@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calculator } from 'lucide-react';
+import { Calculator, Github } from 'lucide-react';
 import CategoryTabs from './components/CategoryTabs';
 import ModelSelector from './components/ModelSelector';
 import InputSection from './components/InputSection';
@@ -27,7 +27,6 @@ const App: React.FC = () => {
   const [isAudioOutput, setIsAudioOutput] = useState(false);
 
   useEffect(() => {
-    // Set default model when category changes
     switch (category) {
       case 'text':
         setModel('gpt-4o');
@@ -74,11 +73,11 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl">
+    <div className="min-h-screen bg-[#263238] flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl rtl">
         <div className="flex items-center mb-6">
-          <Calculator className="w-8 h-8 text-blue-600 mr-2" />
-          <h1 className="text-2xl font-bold text-gray-800">OpenAI API Cost Calculator</h1>
+          <Calculator className="w-8 h-8 text-blue-600 ml-2" />
+          <h1 className="text-2xl font-bold text-gray-800">מחשבון עלויות API של OpenAI - נר אונליין</h1>
         </div>
         <CategoryTabs category={category} setCategory={setCategory} />
         <div className="mt-6">
@@ -128,6 +127,13 @@ const App: React.FC = () => {
             />
           )}
           <CostDisplay cost={cost} />
+        </div>
+        <div className="mt-6 text-center text-sm text-gray-600">
+          <p>פותח באהבה על ידי נר אונליין</p>
+          <a href="https://github.com/neria05" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+            <Github className="w-4 h-4 ml-1" />
+            GitHub
+          </a>
         </div>
       </div>
     </div>
